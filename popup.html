@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OER Evaluation Toolkit</title>
+    <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+    <div class="container">
+        <h1>OER Evaluation Toolkit</h1>
+        <div class="input-section">
+            <input type="url" id="resourceUrl" placeholder="Enter OER URL" required>
+            <button id="evaluateBtn">Evaluate</button>
+        </div>
+        
+        <div class="results-section" id="results" style="display: none;">
+            <h2>Evaluation Results</h2>
+            <div class="connection-status">
+                <span class="status-indicator"></span>
+                <span class="status-text"></span>
+            </div>
+            <div class="criteria-results">
+                <div class="criterion">
+                    <h3>License</h3>
+                    <div id="licenseResult" class="license-details">
+                        <p class="license-type"></p>
+                        <div class="license-info">
+                            <p class="license-status"></p>
+                            <p class="license-availability"></p>
+                            <p class="license-details"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="criterion">
+                    <h3>Quality</h3>
+                    <p id="qualityResult"></p>
+                </div>
+                <div class="criterion">
+                    <h3>Adaptability</h3>
+                    <p id="adaptabilityResult"></p>
+                </div>
+                <div class="criterion">
+                    <h3>Reusability</h3>
+                    <p id="reusabilityResult"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="loading" class="loading" style="display: none;">Evaluating...</div>
+    </div>
+    
+    <script src="scripts/api.js"></script>
+    <script src="scripts/evaluator.js"></script>
+    <script src="scripts/popup.js"></script>
+</body>
+</html>
